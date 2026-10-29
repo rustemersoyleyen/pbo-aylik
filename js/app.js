@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const monthChipsContainer = document.getElementById("monthChips");
   const reportTableBody = document.getElementById("reportTableBody");
-  const reportSummaryInfo = document.getElementById("reportSummaryInfo");
   const editHint = document.getElementById("editHint");
 
   const btnPrint = document.getElementById("btnPrint");
@@ -157,9 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("lblPrincipalDate").textContent = `.... / .... / ${principalYear}`;
     document.getElementById("lblPrincipalSign").textContent = settings.principalName || "";
     document.getElementById("lblPrincipalTitle").textContent = settings.principalTitle || "Okul Müdürü";
-
-    // Özet Bilgi Çubuğu
-    reportSummaryInfo.textContent = `📅 ${currentReport.monthName} ${settings.academicYear} | Aktif Gün Sayısı: ${currentReport.activeRowCount} Gün | Toplam: ${currentReport.totalHours} Saat`;
 
     // Tablo Satırları
     renderTableRows();
