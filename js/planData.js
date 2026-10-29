@@ -99,14 +99,14 @@ const DEFAULT_ANNUAL_PLAN = [
     "month": "EKİM",
     "week": 3,
     "hours": 6,
-    "task": "Sistem bakım-onarım atölyesindeki bilgisayarların eksiklerinin giderilmesi",
+    "task": "Atölyedeki bilgisayarların eksiklerinin giderilmesi",
     "isHoliday": false
   },
   {
     "month": "EKİM",
     "week": 4,
     "hours": 6,
-    "task": "Sistem bakım-onarım atölyesindeki bilgisayarların eksiklerinin giderilmesi",
+    "task": "Atölyedeki bilgisayarların eksiklerinin giderilmesi",
     "isHoliday": false
   },
   {
@@ -232,21 +232,21 @@ const DEFAULT_ANNUAL_PLAN = [
     "month": "MART",
     "week": 2,
     "hours": 6,
-    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "task": "Atölyedeki bilgisayarların yazılımlarının güncellenmesi",
     "isHoliday": false
   },
   {
     "month": "MART",
     "week": 3,
     "hours": 6,
-    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "task": "Atölyedeki bilgisayarların yazılımlarının güncellenmesi",
     "isHoliday": false
   },
   {
     "month": "MART",
     "week": 4,
     "hours": 6,
-    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "task": "Atölyedeki bilgisayarların yazılımlarının güncellenmesi",
     "isHoliday": false
   },
   {
@@ -295,21 +295,21 @@ const DEFAULT_ANNUAL_PLAN = [
     "month": "MAYIS",
     "week": 2,
     "hours": 6,
-    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "task": "Atölyedeki bilgisayarların yazılımlarının güncellenmesi",
     "isHoliday": false
   },
   {
     "month": "MAYIS",
     "week": 3,
     "hours": 6,
-    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "task": "Atölyedeki bilgisayarların yazılımlarının güncellenmesi",
     "isHoliday": false
   },
   {
     "month": "MAYIS",
     "week": 4,
     "hours": 6,
-    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "task": "Atölyedeki bilgisayarların yazılımlarının güncellenmesi",
     "isHoliday": false
   },
   {

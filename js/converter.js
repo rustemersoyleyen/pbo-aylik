@@ -18,11 +18,17 @@ const TaskConverter = {
     "Bilgisayarların güncel güvenlik yazılımlarıyla taranması":
       "Bilgisayarlar güncel güvenlik yazılımlarıyla tarandı.",
 
+    "Atölyedeki bilgisayarların eksiklerinin giderilmesi":
+      "Atölyedeki bilgisayarların eksikleri giderildi.",
+
+    "Atölyedeki bilgisayarların yazılımlarının güncellenmesi":
+      "Atölyedeki bilgisayarların yazılımları güncellendi.",
+
     "Sistem bakım-onarım atölyesindeki bilgisayarların eksiklerinin giderilmesi":
-      "Sistem bakım-onarım atölyesindeki bilgisayarların eksikleri giderildi.",
+      "Atölyedeki bilgisayarların eksikleri giderildi.",
 
     "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi":
-      "Sistem bakım onarım atölyesindeki bilgisayarların yazılımları güncellendi.",
+      "Atölyedeki bilgisayarların yazılımları güncellendi.",
 
     "Atölyenin temizlenmesi ve düzenlenmesi":
       "Atölye temizlendi ve düzenlendi.",
