@@ -194,6 +194,7 @@ const ExportDocx = {
                   alignment: AlignmentType.CENTER,
                   children: [new TextRun({ text: report.reportDate || "", size: 19 })]
                 }),
+                new Paragraph({ spacing: { before: 240 }, text: "" }), // Islak imza boşluğu
                 new Paragraph({
                   alignment: AlignmentType.CENTER,
                   children: [new TextRun({ text: s.teacherName || "", bold: true, size: 20 })]
@@ -215,11 +216,12 @@ const ExportDocx = {
             new TableCell({
               width: { size: 50, type: WidthType.PERCENTAGE },
               children: [
-                new Paragraph({ spacing: { before: 400 }, text: "" }),
+                new Paragraph({ spacing: { before: 600 }, text: "" }), // İki imza arası ferah boşluk
                 new Paragraph({
                   alignment: AlignmentType.CENTER,
                   children: [new TextRun({ text: `.... / .... / ${report.reportDate ? report.reportDate.split("/").pop().trim() : "2026"}`, size: 19 })]
                 }),
+                new Paragraph({ spacing: { before: 240 }, text: "" }), // Islak imza boşluğu
                 new Paragraph({
                   alignment: AlignmentType.CENTER,
                   children: [new TextRun({ text: s.principalName || "", bold: true, size: 20 })]

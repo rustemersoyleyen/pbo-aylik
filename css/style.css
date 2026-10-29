@@ -426,9 +426,10 @@ body {
 /* İmzalar */
 .signatures-container {
   margin-top: auto;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px; /* İki imza bloğu arasındaki ferah mesafe */
 }
 
 .signature-block-teacher {
@@ -440,8 +441,13 @@ body {
 }
 
 .signature-date {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.signature-space {
+  height: 38px; /* Islak imza ve mühür için ayrılmış fiziksel boşluk */
 }
 
 .signature-name {
