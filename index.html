@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PBO Aylık Çalışma Raporu Oluşturucu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== ÜST HEADER ==================== -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">📋</div>
+        <div class="brand-text">
+          <h1>PBO Aylık Rapor Sistemi</h1>
+          <span class="brand-badge">2026-2027 MEB Planı</span>
+        </div>
+      </div>
+
+      <nav class="nav-tabs">
+        <button class="nav-tab-btn active" data-tab="report-tab">
+          <span>📄</span> Aylık Rapor
+        </button>
+        <button class="nav-tab-btn" data-tab="settings-tab">
+          <span>⚙️</span> Ayarlar & PBO Saatleri
+        </button>
+        <button class="nav-tab-btn" data-tab="plan-tab">
+          <span>📅</span> Yıllık Plan
+        </button>
+        <button class="nav-tab-btn" data-tab="about-tab">
+          <span>🐙</span> GitHub
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== ANA ALAN ==================== -->
+  <main class="app-main">
+
+    <!-- ==================== SEKME 1: AYLIK RAPOR ==================== -->
+    <section id="report-tab" class="tab-pane active">
+      <!-- Toolbar -->
+      <div class="toolbar-card">
+        <div class="month-selector-wrapper">
+          <span class="month-selector-label">Ay Seçimi:</span>
+          <div class="month-chips" id="monthChips">
+            <!-- Dinamik Ay Seçici Butonlar -->
+          </div>
+        </div>
+
+        <div class="toolbar-actions">
+          <button id="btnPrint" class="btn btn-primary" title="A4 Sayfa Olarak Yazdır veya PDF Kaydet">
+            <span>🖨️</span> Yazdır / PDF
+          </button>
+          <button id="btnWord" class="btn btn-word" title="Resmi Formatlı Word (.docx) İndir">
+            <span>📄</span> Word (.docx)
+          </button>
+          <button id="btnExcel" class="btn btn-excel" title="Formatlı Excel (.xlsx) İndir">
+            <span>📊</span> Excel (.xlsx)
+          </button>
+          <button id="btnToggleEdit" class="btn btn-secondary" title="Tablo metinlerini doğrudan düzenle">
+            <span>✏️</span> Düzenle
+          </button>
+        </div>
+      </div>
+
+      <!-- Bilgi Rozeti -->
+      <div style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; color: var(--gray-600); font-size: 0.88rem;">
+        <span id="reportSummaryInfo">Yükleniyor...</span>
+        <span id="editHint" style="display: none; color: #b45309; font-weight: 600;">
+          💡 Düzenleme modu açık: Tablodaki metinlere veya tarihlere tıklayarak doğrudan değiştirebilirsiniz.
+        </span>
+      </div>
+
+      <!-- A4 Kağıt Önizleme (Piksel Piksel Resmi Şablon) -->
+      <div class="a4-viewport">
+        <div class="a4-paper" id="a4Paper">
+          
+          <!-- Üst Başlık -->
+          <div class="report-header">
+            <div class="school-title" id="lblSchoolName">KIRAÇ BİST MESLEKİ VE TEKNİK ANADOLU LİSESİ</div>
+            <div class="form-title">PLANLAMA BAKIM ONARIM ÇALIŞMA RAPORU</div>
+          </div>
+
+          <!-- Üst Bilgi Tablosu -->
+          <div class="meta-table-wrapper">
+            <div class="meta-box-left">
+              <table class="meta-table">
+                <tr>
+                  <td class="label-col">Alan Adı :</td>
+                  <td id="lblFieldName">Bilişim Teknolojileri</td>
+                </tr>
+                <tr>
+                  <td class="label-col">Atölye Şefi :</td>
+                  <td id="lblTeacherName">Rustem ERSÖYLEYEN</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="meta-box-right">
+              <table class="meta-table">
+                <tr>
+                  <td colspan="2" class="center-header">Ait Olduğu</td>
+                </tr>
+                <tr>
+                  <td class="label-col">Yıl :</td>
+                  <td id="lblAcademicYear">2026-2027</td>
+                </tr>
+                <tr>
+                  <td class="label-col">Ay :</td>
+                  <td id="lblMonthName" style="font-weight: bold;">EYLÜL</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <!-- Ana Çalışma Tablosu -->
+          <table class="report-table" id="reportTable">
+            <thead>
+              <tr>
+                <th style="width: 15%;">TARİH</th>
+                <th style="width: 11%;">Saat</th>
+                <th style="width: 37%;">YAPILAN İŞ</th>
+                <th style="width: 37%;">AÇIKLAMALAR</th>
+              </tr>
+            </thead>
+            <tbody id="reportTableBody">
+              <!-- Dinamik Satırlar -->
+            </tbody>
+          </table>
+
+          <!-- Alt Beyan -->
+          <div class="report-statement">
+            <span id="lblMonthStatement">EYLÜL</span> ayı içinde yapmış olduğum çalışmalar yukarıda gösterilmiştir. Bilgilerinize arz ederim.
+          </div>
+
+          <!-- İmzalar -->
+          <div class="signatures-container">
+            <!-- Atölye Şefi İmzası -->
+            <div class="signature-block-teacher">
+              <div class="signature-date" id="lblReportDate">30 / 09 / 2026</div>
+              <div class="signature-name" id="lblTeacherSign">Rustem ERSÖYLEYEN</div>
+              <div class="signature-title" id="lblLabSign">Donanım Laboratuarı Atölye Şefi</div>
+            </div>
+
+            <!-- Okul Müdürü Onayı -->
+            <div class="signature-block-principal">
+              <div class="signature-date" id="lblPrincipalDate">.... / .... / 2026</div>
+              <div class="signature-name" id="lblPrincipalSign">Serkan ERTEM</div>
+              <div class="signature-title" id="lblPrincipalTitle">Okul Müdürü</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEKME 2: AYARLAR & PBO SAATLERİ ==================== -->
+    <section id="settings-tab" class="tab-pane">
+      <div class="settings-grid">
+        
+        <!-- Kart 1: Kurum ve Yetkili Bilgileri -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title"><span>🏛️</span> Kurum & Yetkili Bilgileri</h2>
+          </div>
+
+          <form id="generalSettingsForm">
+            <div class="form-group">
+              <label for="inputSchoolName">Okul Adı</label>
+              <input type="text" id="inputSchoolName" class="form-control" placeholder="Örn: KIRAÇ BİST MESLEKİ VE TEKNİK ANADOLU LİSESİ">
+            </div>
+
+            <div class="form-group">
+              <label for="inputFieldName">Alan Adı</label>
+              <input type="text" id="inputFieldName" class="form-control" placeholder="Örn: Bilişim Teknolojileri">
+            </div>
+
+            <div class="form-group">
+              <label for="inputLabName">Laboratuar / Atölye Adı</label>
+              <input type="text" id="inputLabName" class="form-control" placeholder="Örn: Donanım Laboratuarı">
+            </div>
+
+            <div class="form-group">
+              <label for="inputTeacherName">Atölye Şefi Adı Soyadı</label>
+              <input type="text" id="inputTeacherName" class="form-control" placeholder="Örn: Rustem ERSÖYLEYEN">
+            </div>
+
+            <div class="form-group">
+              <label for="inputPrincipalName">Okul Müdürü Adı Soyadı</label>
+              <input type="text" id="inputPrincipalName" class="form-control" placeholder="Örn: Serkan ERTEM">
+            </div>
+
+            <div class="form-group">
+              <label for="inputAcademicYear">Eğitim-Öğretim Yılı</label>
+              <input type="text" id="inputAcademicYear" class="form-control" placeholder="2026-2027">
+            </div>
+
+            <div class="form-group">
+              <label for="selectDateFormat">Tarih Formatı</label>
+              <select id="selectDateFormat" class="form-control">
+                <option value="D/M/YYYY">D/M/YYYY (Örn: 9/9/2026)</option>
+                <option value="DD.MM.YYYY">DD.MM.YYYY (Örn: 09.09.2026)</option>
+                <option value="D.MM.YYYY">D.MM.YYYY (Örn: 9.09.2026)</option>
+                <option value="DD/MM/YYYY">DD/MM/YYYY (Örn: 09/09/2026)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <!-- Kart 2: PBO Günleri ve Saatleri -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title"><span>⏰</span> PBO Saatleri ve Günleri</h2>
+            <span class="brand-badge" id="lblWeeklyTotalHours">Haftalık: 6 Saat</span>
+          </div>
+
+          <p style="font-size: 0.88rem; color: var(--gray-600); margin-bottom: 1rem;">
+            Planlama Bakım Onarım (PBO) yaptığınız günleri ve her gün için kaç saat çalışma yapılacağını aşağıdan belirleyin. Rapor takviminiz bu günlere göre otomatik oluşturulur.
+          </p>
+
+          <div class="schedule-list" id="scheduleListContainer">
+            <!-- Dinamik Gün ve Saat Listesi -->
+          </div>
+
+          <button type="button" id="btnAddScheduleDay" class="btn btn-secondary" style="width: 100%; margin-bottom: 1.5rem;">
+            <span>➕</span> Yeni PBO Günü Ekle
+          </button>
+
+          <div style="display: flex; gap: 0.75rem;">
+            <button type="button" id="btnSaveSettings" class="btn btn-primary" style="flex: 1;">
+              <span>💾</span> Ayarları Kaydet
+            </button>
+            <button type="button" id="btnResetSettings" class="btn btn-secondary" title="İlk ayarlara döndür">
+              <span>🔄</span> Sıfırla
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SEKME 3: YILLIK PLAN ==================== -->
+    <section id="plan-tab" class="tab-pane">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <h2 class="card-title"><span>📅</span> 2026-2027 PBO Yıllık Planı</h2>
+          <div style="display: flex; gap: 0.5rem;">
+            <label class="btn btn-secondary btn-sm" style="cursor: pointer;">
+              <span>📂</span> Başka Excel Yükle
+              <input type="file" id="excelFileInput" accept=".xlsx, .xls" style="display: none;">
+            </label>
+            <button id="btnResetPlan" class="btn btn-secondary btn-sm">
+              <span>🔄</span> Orijinal Plana Dön
+            </button>
+          </div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--gray-600);">
+          Bu plan <code>PBO_YILLIK_2026-2027.xlsx</code> dosyanızdan otomatik yüklenmiştir. İlgili ay seçildiğinde o ayın haftalık işleri doğrudan aylık rapora aktarılır ve otomatik olarak geçmiş zamanlı çalışma açıklamasına dönüştürülür.
+        </p>
+      </div>
+
+      <div class="plan-table-container">
+        <table class="plan-table">
+          <thead>
+            <tr>
+              <th style="width: 10%;">Ay</th>
+              <th style="width: 8%;">Hafta</th>
+              <th style="width: 8%;">Saat</th>
+              <th style="width: 37%;">Plandaki Yapılacak İş</th>
+              <th style="width: 37%;">Otomatik Açıklama (Rapora Yansıyacak Hali)</th>
+            </tr>
+          </thead>
+          <tbody id="planTableBody">
+            <!-- Dinamik Yıllık Plan Satırları -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== SEKME 4: GITHUB & HAKKINDA ==================== -->
+    <section id="about-tab" class="tab-pane">
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <div class="card-header">
+          <h2 class="card-title"><span>🐙</span> GitHub & Proje Bilgisi</h2>
+        </div>
+
+        <div style="font-size: 0.92rem; line-height: 1.7; color: var(--gray-700);">
+          <p style="margin-bottom: 1rem;">
+            Bu uygulama, <strong>Rustem ERSÖYLEYEN</strong> için Mesleki ve Teknik Anadolu Liselerinde Atölye Şefliği <strong>Planlama Bakım Onarım (PBO)</strong> aylık çalışma raporlarını MEB standart resmi şablonuna uygun olarak saniyeler içinde hazırlamak amacıyla geliştirilmiştir.
+          </p>
+
+          <h3 style="font-size: 1rem; color: var(--dark); margin: 1.25rem 0 0.5rem;">✨ Başlıca Özellikler:</h3>
+          <ul style="padding-left: 1.5rem; margin-bottom: 1.25rem;">
+            <li><strong>2026-2027 MEB Yıllık Planı Entegre:</strong> Excel'deki tüm haftalık planlar ve saatler hazır gömülüdür.</li>
+            <li><strong>Akıllı Cümle Dönüştürücü:</strong> Plandaki hedef mastar cümleleri otomatik olarak "temizlendi, arızalar giderildi, güncellendi" şeklinde geçmiş zamanlı resmi çalışma açıklamasına çevirir.</li>
+            <li><strong>Otomatik Takvim & Tatil Filtresi:</strong> Seçtiğiniz PBO günlerine göre (örn: Perşembe 4s, Cuma 2s) ayın günlerini otomatik hesaplar; resmi tatilleri ve MEB ara tatillerini otomatik çıkarır.</li>
+            <li><strong>Birebir Resmi Şablon:</strong> Milli Eğitim Bakanlığı atölye şefliği çalışma raporu şablonu ile piksel piksel aynı çıktıyı üretir.</li>
+            <li><strong>Çoklu Dışa Aktarma:</strong> Tek tıkla <strong>A4 PDF/Yazıcı</strong>, formatlı <strong>Word (.docx)</strong> veya <strong>Excel (.xlsx)</strong> olarak indirilebilir.</li>
+            <li><strong>Tarayıcıda Çalışır (Kurulumsuz):</strong> İnternet olmadan da çalışır, ayarlarınız tarayıcınızın yerel belleğinde (localStorage) güvenle saklanır.</li>
+          </ul>
+
+          <h3 style="font-size: 1rem; color: var(--dark); margin: 1.25rem 0 0.5rem;">🚀 GitHub Deposu & Canlı Yayın:</h3>
+          <p style="margin-bottom: 0.5rem;">
+            GitHub Kullanıcı Adı: <code>rustemersoyleyen</code><br>
+            GitHub Repo Adresi: <code>https://github.com/rustemersoyleyen/pbo-aylik</code><br>
+            GitHub Pages Canlı Adresi: <code>https://rustemersoyleyen.github.io/pbo-aylik/</code>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== TOAST BİLDİRİMİ ==================== -->
+  <div id="toast" class="toast">
+    <span id="toastIcon">✅</span>
+    <span id="toastMsg">İşlem başarıyla tamamlandı.</span>
+  </div>
+
+  <!-- Kütüphaneler (Yerel ve CDN Yedekli) -->
+  <script src="lib/xlsx.full.min.js"></script>
+  <script src="lib/docx.umd.js"></script>
+  
+  <!-- Uygulama Scriptleri -->
+  <script src="js/planData.js"></script>
+  <script src="js/converter.js"></script>
+  <script src="js/generator.js"></script>
+  <script src="js/exportDocx.js"></script>
+  <script src="js/exportXlsx.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

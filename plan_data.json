@@ -1,0 +1,275 @@
+[
+  {
+    "month": "EYLÜL",
+    "week": 1,
+    "hours": 6,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi; arızalı/çalışmayan bilgisayarların ve eksik yazılımların tespit edilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "EYLÜL",
+    "week": 2,
+    "hours": 6,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi; arızalı/çalışmayan bilgisayarların ve eksik yazılımların tespit edilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "EYLÜL",
+    "week": 3,
+    "hours": 6,
+    "task": "Atölyedeki bilgisayarların donanım arızalarının giderilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "EKİM",
+    "week": 1,
+    "hours": 6,
+    "task": "Bilgisayarların güncel güvenlik yazılımlarıyla taranması",
+    "isHoliday": false
+  },
+  {
+    "month": "EKİM",
+    "week": 2,
+    "hours": 6,
+    "task": "Bilgisayarların güncel güvenlik yazılımlarıyla taranması",
+    "isHoliday": false
+  },
+  {
+    "month": "EKİM",
+    "week": 3,
+    "hours": 6,
+    "task": "Sistem bakım-onarım atölyesindeki bilgisayarların eksiklerinin giderilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "EKİM",
+    "week": 4,
+    "hours": 6,
+    "task": "Sistem bakım-onarım atölyesindeki bilgisayarların eksiklerinin giderilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "EKİM",
+    "week": 5,
+    "hours": 6,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "KASIM",
+    "week": 1,
+    "hours": 6,
+    "task": "Laboratuvar eksikliklerinin giderilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "KASIM",
+    "week": "Tatil",
+    "hours": 0,
+    "task": "16 - 20 Kasım 2026 Ara Tatil",
+    "isHoliday": true
+  },
+  {
+    "month": "KASIM",
+    "week": 3,
+    "hours": 6,
+    "task": "Laboratuvar eksikliklerinin giderilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "KASIM",
+    "week": 4,
+    "hours": 6,
+    "task": "Ağ bağlantılarının kontrol edilmesi ve internet ayarlarının yapılması",
+    "isHoliday": false
+  },
+  {
+    "month": "ARALIK",
+    "week": 1,
+    "hours": 6,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "ARALIK",
+    "week": 2,
+    "hours": 6,
+    "task": "Atölye şef odasının düzenlenmesi ve kayıtların güncellenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "ARALIK",
+    "week": 3,
+    "hours": 6,
+    "task": "Atölye şef odasının düzenlenmesi ve kayıtların güncellenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "ARALIK",
+    "week": 4,
+    "hours": 6,
+    "task": "Atölyedeki bilgisayarların donanım arızalarının giderilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "ARALIK",
+    "week": 5,
+    "hours": 6,
+    "task": "Atölyedeki bilgisayarların donanım arızalarının giderilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "OCAK",
+    "week": 1,
+    "hours": 6,
+    "task": "Atölyedeki bilgisayarların donanım arızalarının giderilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "OCAK",
+    "week": 2,
+    "hours": 6,
+    "task": "Atölyedeki bilgisayarların donanım arızalarının giderilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "ŞUBAT",
+    "week": 1,
+    "hours": 6,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "ŞUBAT",
+    "week": 2,
+    "hours": 6,
+    "task": "Bilgisayarların güncel güvenlik yazılımlarıyla taranması",
+    "isHoliday": false
+  },
+  {
+    "month": "ŞUBAT",
+    "week": 3,
+    "hours": 6,
+    "task": "Bilgisayarların güncel güvenlik yazılımlarıyla taranması",
+    "isHoliday": false
+  },
+  {
+    "month": "ŞUBAT",
+    "week": 4,
+    "hours": 6,
+    "task": "Bilgisayarların güncel güvenlik yazılımlarıyla taranması",
+    "isHoliday": false
+  },
+  {
+    "month": "MART",
+    "week": 1,
+    "hours": 6,
+    "task": "Bilgisayarların güncel güvenlik yazılımlarıyla taranması",
+    "isHoliday": false
+  },
+  {
+    "month": "MART",
+    "week": 2,
+    "hours": 6,
+    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "MART",
+    "week": 3,
+    "hours": 6,
+    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "MART",
+    "week": 4,
+    "hours": 6,
+    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "MART",
+    "week": "Tatil",
+    "hours": 0,
+    "task": "08 - 12 Mart 2027 Ara Tatil",
+    "isHoliday": true
+  },
+  {
+    "month": "NİSAN",
+    "week": 1,
+    "hours": 6,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "NİSAN",
+    "week": 2,
+    "hours": 6,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi; arızalı/çalışmayan bilgisayarların ve eksik yazılımların tespit edilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "NİSAN",
+    "week": 3,
+    "hours": null,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi; arızalı/çalışmayan bilgisayarların ve eksik yazılımların tespit edilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "NİSAN",
+    "week": 4,
+    "hours": 6,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi; arızalı/çalışmayan bilgisayarların ve eksik yazılımların tespit edilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "MAYIS",
+    "week": 1,
+    "hours": 6,
+    "task": "Atölyenin temizlenmesi ve düzenlenmesi; arızalı/çalışmayan bilgisayarların ve eksik yazılımların tespit edilmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "MAYIS",
+    "week": 2,
+    "hours": 6,
+    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "MAYIS",
+    "week": 3,
+    "hours": 6,
+    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "MAYIS",
+    "week": 4,
+    "hours": 6,
+    "task": "Sistem bakım onarım atölyesindeki bilgisayarların yazılımlarının güncellenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "HAZİRAN",
+    "week": 1,
+    "hours": 6,
+    "task": "Ağ bağlantılarının kontrol edilmesi ve internet ayarlarının yapılması",
+    "isHoliday": false
+  },
+  {
+    "month": "HAZİRAN",
+    "week": 2,
+    "hours": 6,
+    "task": "Laboratuvar temizliği ve düzenlenmesi",
+    "isHoliday": false
+  },
+  {
+    "month": "HAZİRAN",
+    "week": 3,
+    "hours": 6,
+    "task": "Laboratuvar temizliği ve düzenlenmesi",
+    "isHoliday": false
+  }
+]
